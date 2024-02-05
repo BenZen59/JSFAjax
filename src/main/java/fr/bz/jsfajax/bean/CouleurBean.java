@@ -6,6 +6,7 @@ import fr.bz.jsfajax.metier.Couleur;
 
 import jakarta.annotation.ManagedBean;
 import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
 
 import java.io.Serializable;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @Named("couleurBean")
 @ManagedBean
+@SessionScoped
 public class CouleurBean implements Serializable {
     private static ArrayList<Couleur> allCouleurs;
     private Couleur couleurSelected;

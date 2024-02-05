@@ -14,7 +14,7 @@ public class CouleurConverter implements Converter {
     private CouleurBean couleurBean;
 
     public Object getAsObject(FacesContext fc, UIComponent uic, String value) {
-        if (value != null && value.trim().length() > 0) {
+        if (value != null && !value.trim().isEmpty()) {
             for (Couleur couleur : couleurBean.getCouleurs()) {
                 if (couleur.getIdCouleur() == Integer.parseInt(value)) {
                     return couleur;
