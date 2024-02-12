@@ -13,6 +13,20 @@
             <ui:include src="/template/menu.xhtml"></ui:include>
         </ui:insert>
     </h:head>
-    <h:outputLabel value="Hello, world"/>
+    <div class="card">
+        <h:form>
+            <p:dataTable id="tbl" var="pays" value="#{paysBean.allPays}"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                         paginator="true" rows="40" styleClass="mt-2">
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Code"/>
+                    </f:facet>
+                    <h:outputText value="#{pays.nomPays}"/>
+                </p:column>
+
+            </p:dataTable>
+        </h:form>
+    </div>
 </ui:composition></f:view>
 </html>
