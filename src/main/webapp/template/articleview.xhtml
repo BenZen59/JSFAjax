@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+    <ui:composition>
+        <h:head>
+            <h:outputStylesheet library="css" name="flags.css"/>
+            <h:outputStylesheet library="primefaces-saga" name="theme.css"/>
+            <ui:insert name="header">
+                <ui:include src="/template/menu.xhtml"></ui:include>
+            </ui:insert>
+        </h:head>
+        <h:form>
+            <div class="card">
+                <p:fieldset legend="Paramètres" toggleable="true" toggleSpeed="500" collapsed="true">
+                    <p:ajax event="toggle"/>
+                    <div class="m-0">
+                    </div>
+                </p:fieldset>
+                <br/>
+                <br/>
+                <p:dataTable id="tbl" var="article" value="#{articleBean.allArticles}"
+                             sortMode="single" filteredValue="#{articleBean.filteredArticles}"
+                             paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                             paginator="true" rows="40" styleClass="mt-2" widgetVar="dataTable">
+
+                    <p:column headerText="Nom Article" sortBy="#{article.nomArticle}" filterBy="#{article.nomArticle}">
+                        <h:outputText value="#{article.nomArticle}"/>
+                    </p:column>
+                    <p:column headerText="Prix Achat" sortBy="#{article.prixAchat}" filterBy="#{article.prixAchat}">
+                        <h:outputText value="#{article.prixAchat}"/>
+                    </p:column>
+                    <p:column headerText="Volume" sortBy="#{article.volume}" filterBy="#{article.volume}">
+                        <h:outputText value="#{article.volume}"/>
+                    </p:column>
+                    <p:column headerText="Titrage" sortBy="#{article.titrage}" filterBy="#{article.titrage}">
+                        <h:outputText value="#{article.titrage}"/>
+                    </p:column>
+                    <p:column headerText="Marque" sortBy="#{article.marque}" filterBy="#{article.marque}">
+                        <h:outputText value="#{article.marque}"/>
+                    </p:column>
+                    <p:column headerText="Couleur" sortBy="#{article.couleur}" filterBy="#{article.couleur}">
+                        <h:outputText value="#{article.couleur}"/>
+                    </p:column>
+                    <p:column headerText="Type Biere" sortBy="#{article.typeBiere}" filterBy="#{article.typeBiere}">
+                        <h:outputText value="#{article.typeBiere}"/>
+                    </p:column>
+                    <p:column headerText="Continent" sortBy="#{article.continent}" filterBy="#{article.continent}">
+                        <h:outputText value="#{article.continent}"/>
+                    </p:column>
+                    <p:column headerText="Pays" sortBy="#{article.pays}" filterBy="#{article.pays}">
+                        <span class="flag flag-#{article.pays}"></span>
+                        <h:outputText value="#{article.pays}"/>
+                    </p:column>
+                </p:dataTable>
+            </div>
+        </h:form>
+    </ui:composition></f:view>
+</html>

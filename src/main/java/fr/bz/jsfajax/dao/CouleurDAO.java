@@ -7,7 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import static fr.bz.jsfajax.dao.SDBMConnect.connexion;
+import static fr.bz.jsfajax.dao.ConnectDtb.connexion;
+
 public class CouleurDAO extends DAO<Couleur, Couleur, Integer> {
     @Override
     public Couleur getByID(Integer id) {
@@ -35,6 +36,9 @@ public class CouleurDAO extends DAO<Couleur, Couleur, Integer> {
             rs.close();
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        for(int i = 0; i < liste.size() -1; i++){
+            System.out.println(liste.get(i));
         }
         return liste;
     }

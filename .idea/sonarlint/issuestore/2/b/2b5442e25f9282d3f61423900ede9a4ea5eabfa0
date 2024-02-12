@@ -1,0 +1,7 @@
+
+’
+java:S1319."pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(™Èö¬øÿÿÿÿ8—Ã¯¼Ø1
+
+java:S1319="pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¢ï—ù8™Ã¯¼Ø1
+H
+java:S1168U"+Return an empty collection instead of null.(¥¹ï8•Æ¯¼Ø1
