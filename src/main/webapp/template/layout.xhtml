@@ -9,29 +9,23 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
-    <title>Your JSF Application</title>
-    <!-- Add any additional head elements like stylesheets or scripts here -->
+    <title><ui:insert name="titre">Your JSF Application</ui:insert></title>
 </h:head>
 
 <h:body>
-    <div id="container">
+    <div id="page">
         <div id="header">
-            <h:graphicImage value="your_logo.png" alt="Your Logo"/>
-            <h1>Your JSF Application</h1>
+
         </div>
 
         <div id="content">
-            <!-- Content specific to each page will be inserted here -->
-            <ui:insert name="contenu"/>
-        </div>
-
-        <div id="footer">
-            <p>&copy; 2024 Your Company. All rights reserved.</p>
+            <ui:insert name="content">
+                <ui:include src="/template/articleview.xhtml"></ui:include>
+            </ui:insert>
         </div>
     </div>
 </h:body>
-
 </html>

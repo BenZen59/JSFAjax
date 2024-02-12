@@ -9,12 +9,15 @@ import jakarta.faces.convert.FacesConverter;
 import jakarta.inject.Inject;
 
 @FacesConverter(value = "couleurConverter", managed = true)
-public class CouleurConverter implements Converter {
+public class CouleurConverter implements Converter<Couleur> {
     @Inject
     private CouleurBean couleurBean;
 
-    public Object getAsObject(FacesContext fc, UIComponent uic, String value) {
-        if (value != null && !value.trim().isEmpty()) {
+
+    @Override
+    public Couleur getAsObject(FacesContext facesContext, UIComponent uiComponent, String value) {
+        System.out.println("Conversion de la valeur en objet : " + value);
+        if (value != null && value.trim().length() > 0) {
             for (Couleur couleur : couleurBean.getCouleurs()) {
                 if (couleur.getIdCouleur() == Integer.parseInt(value)) {
                     return couleur;
@@ -25,8 +28,9 @@ public class CouleurConverter implements Converter {
     }
 
     @Override
-    public String getAsString(FacesContext facesContext, UIComponent uiComponent, Object object) {
-        Couleur couleur = (Couleur) object;
-        return String.valueOf(couleur.getIdCouleur());
+    public String getAsString(FacesContext facesContext, UIComponent uiComponent, Couleur couleur) {
+        return String.valueOf(couleur);
     }
+
+
 }

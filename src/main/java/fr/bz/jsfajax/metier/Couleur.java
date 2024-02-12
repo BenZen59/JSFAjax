@@ -1,6 +1,8 @@
 package fr.bz.jsfajax.metier;
 
-public class Couleur {
+import java.io.Serializable;
+
+public class Couleur implements Serializable {
     private int idCouleur;
     private String nomCouleur;
 
@@ -37,5 +39,7 @@ public class Couleur {
     public int getId() {
         return 0;
     }
+
+
 }
 
