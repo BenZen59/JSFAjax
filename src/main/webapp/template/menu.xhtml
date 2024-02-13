@@ -7,21 +7,28 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 <f:view>
-<ui:composition>
-    <h:form>
+    <ui:composition>
+        <h:form>
             <p:dock position="top">
-                <p:menuitem value="Article" icon="/resources/images/ArticleView.png" url="http://localhost:8080/JSFAjax_war_exploded/template/articleview.xhtml"/>
-                <p:menuitem value="Couleur" icon="/resources/images/color.png" url="http://localhost:8080/JSFAjax_war_exploded/template/couleurview.xhtml"/>
-                <p:menuitem value="Pays" icon="/resources/images/pays.png" url="http://localhost:8080/JSFAjax_war_exploded/template/pays.xhtml"/>
+                <p:menuitem value="Article" icon="/resources/images/ArticleView.png"
+                            url="http://localhost:8080/JSFAjax_war_exploded/template/articleview.xhtml"/>
+                <p:menuitem value="Couleur" icon="/resources/images/color.png"
+                            url="http://localhost:8080/JSFAjax_war_exploded/template/couleurview.xhtml"/>
+                <p:menuitem value="Pays" icon="/resources/images/pays.png"
+                            url="http://localhost:8080/JSFAjax_war_exploded/template/pays.xhtml"/>
+                <p:menuitem value="Login" icon="/resources/images/login.png"
+                            url="http://localhost:8080/JSFAjax_war_exploded/template/login.xhtml"/>
+                <p:menuitem value="Params" icon="/resources/images/params.png"
+                            action="#{bean.navigateToParamsPage}"/>
             </p:dock>
-    </h:form>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-</ui:composition>
+        </h:form>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    </ui:composition>
 </f:view>
 </html>

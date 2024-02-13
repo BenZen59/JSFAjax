@@ -5,6 +5,7 @@ import fr.bz.jsfajax.metier.*;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
+import org.primefaces.model.LazyDataModel;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -15,6 +16,8 @@ import java.util.List;
 public class ArticleBean implements Serializable {
     private List<Article> allArticles;
     private List<Article> filteredArticles = allArticles;
+    private LazyDataModel<Article> articleLazyDataModel;
+
 
     @PostConstruct
     private void init(){
@@ -32,7 +35,7 @@ public class ArticleBean implements Serializable {
         this.allArticles = allArticles;
     }
 
-    public List<Article> getArticles(){
+    public List<Article> getArticles(int i){
         return allArticles;
     }
 
